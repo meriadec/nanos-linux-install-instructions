@@ -20,7 +20,7 @@ cat /etc/group | grep plugdev
 
 ```bash
 # create the plugdev group
-groupadd plugdev
+sudo groupadd plugdev
 ```
 
    </td>
@@ -42,7 +42,7 @@ If the output **does not contains** `plugdev`, it means you are not in the `plug
 
 ```bash
 # add user to the plugdev group
-gpasswd -a <user> plugdev
+sudo gpasswd -a <user> plugdev
 ```
 *Note: replace `<user>` by your username, e.g for user "mike", it would be `gpasswd -a mike plugdev`.*
 
