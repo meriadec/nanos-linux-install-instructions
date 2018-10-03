@@ -23,7 +23,6 @@ cat /etc/group | grep plugdev
 groupadd plugdev
 ```
 
-*Note: replace `<user>` by your username, e.g for user "mike", it would be `gpasswd -a mike plugdev`.*
    </td>
   </tr>
 </table>
@@ -45,6 +44,7 @@ If the output **does not contains** `plugdev`, it means you are not in the `plug
 # add user to the plugdev group
 gpasswd -a <user> plugdev
 ```
+*Note: replace `<user>` by your username, e.g for user "mike", it would be `gpasswd -a mike plugdev`.*
 
 After that, you must **logout and in again** for the change to take effect. To verify you are correctly in the `plugdev` group, type:
 
