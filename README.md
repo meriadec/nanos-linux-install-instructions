@@ -1,4 +1,4 @@
-# Fix connection issues - Linux
+# Fix Nano S connection issues - Linux
 
 Some udev rules are required to allow device access. Refer to the [Chrome USB API documentation](https://developer.chrome.com/apps/app_usb#caveats) for details. Follow those steps.
 
