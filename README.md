@@ -79,6 +79,13 @@ If still not working, you may try those additional steps:
 
 Edit the `/etc/udev/rules.d/20-hw1.rules` file, and add the `OWNER="username"` parameter to each line, where `username` is your Linux username.
 
+Then, reload the rules
+
+```bash
+udevadm trigger
+udevadm control --reload-rules
+```
+
 #### Option 2: additionnal rules
 
 Edit the `/etc/udev/rules.d/20-hw1.rules` file and add those lines:
@@ -86,6 +93,13 @@ Edit the `/etc/udev/rules.d/20-hw1.rules` file and add those lines:
 ```bash
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2c97"
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2581"
+```
+
+Then, reload the rules
+
+```bash
+udevadm trigger
+udevadm control --reload-rule
 ```
 
 #### Option 3: alternative rules
@@ -101,4 +115,11 @@ SUBSYSTEMS=="usb", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="1807", MODE="0660
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="1808", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0000", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl”
+```
+
+Then, reload the rules
+
+```bash
+udevadm trigger
+udevadm control --reload-rule
 ```
